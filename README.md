@@ -5,6 +5,14 @@ This QEMU version implements the OX Controller running in the DFC Card, exposing
 Compiling QEMU:
 
 ```
+If you have a Debian distribution, this is a list of dependencies to be installed:
+sudo apt-get install python libglib2.0-dev zlib1g-dev autoconf libtool libsdl-console libsdl-console-dev libaio-dev
+
+If you are using gcc 7.x or higher, you might need to add the flags:
+ -Wno-format-truncation
+ -Wno-memset-elt-size
+to QEMU_CFLAGS in ./configure file 
+
 $ ./configure --target-list=x86_64-softmmu
 $ make -j16
 ```
